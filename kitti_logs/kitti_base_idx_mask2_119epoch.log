@@ -1,0 +1,284 @@
+{'dataset': {'name': 'SemanticKitti', 'version': None, 'path': '/home/data/SemanticKitti', 'rotate_aug': True, 'flip_aug': True, 'max_volume_space': [50, 3.1415926, 3], 'min_volume_space': [0, -3.1415926, -5], 'gt_generator': {'sigma': 5}, 'grid_size': [480, 360, 32], 'inst_aug': {'if_use': True, 'aug_type': 'contmix', 'inst_pkl_path': '/home/data/SemanticKitti/instance_path.pkl', 'inst_trans': True, 'inst_rotate': True, 'inst_flip': True, 'inst_add': True}, 'num_worker': 12, 'min_points': 15}, 'model': {'pix_fusion': True, 'pix_fusion_path': 'checkpoints/resnet18-5c106cde.pth', 'use_sara': True, 'use_att': False, 'use_cont': False, 'model_load_path': 'kitti_ckpts', 'model_save_path': 'kitti_ckpts', 'train_batch_size': 4, 'val_batch_size': 4, 'learning_rate': 0.004, 'LR_MILESTONES': [40, 60, 90], 'LR_GAMMA': 0.5, 'check_iter': 4000, 'max_epoch': 0, 'post_proc': {'threshold': 0.1, 'nms_kernel': 5, 'top_k': 100}, 'center_loss': 'MSE', 'offset_loss': 'L1', 'center_loss_weight': 100, 'offset_loss_weight': 10}}
+epoch: 0   lr: 0.00400
+
+Validation per class PQ, SQ, RQ, IoU, P, R (Cam): 
+                 car :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             bicycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+          motorcycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+               truck :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                 bus :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+              person :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+           bicyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+        motorcyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                road :  13.10%   68.75%   19.05%   24.76%   19.96%   18.22%
+             parking :   0.00%    0.00%    0.00%    0.05%    0.00%    0.00%
+            sidewalk :   4.26%   62.50%    6.81%   21.17%    6.64%    6.99%
+        other-ground :   0.00%    0.00%    0.00%    0.22%    0.00%    0.00%
+            building :   3.39%   58.94%    5.74%   23.36%    5.32%    6.24%
+               fence :   2.06%   65.19%    3.16%   14.44%    2.48%    4.38%
+          vegetation :   0.00%    0.00%    0.00%    1.29%    0.00%    0.00%
+               trunk :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             terrain :   0.00%    0.00%    0.00%    0.06%    0.00%    0.00%
+                pole :  14.15%   72.16%   19.61%   18.84%   27.72%   15.18%
+        traffic-sign :   6.56%   74.81%    8.77%    4.04%    5.73%   18.60%
+PQ 2.3  PQ_dagger  21.2  SQ 21.2  RQ 3.3  |  PQ_th 0.0  SQ_th 0.0  RQ_th 0.0  |  PQ_st 4.0  SQ_st 36.6  RQ_st 5.7  |  mIoU 5.7
+Current val PQ is 2.3 while the best val PQ is 2.3
+Current val miou is 5.7
+Validation per class PQ, SQ, RQ, IoU, P, R (None): 
+                 car :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             bicycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+          motorcycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+               truck :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                 bus :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+              person :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+           bicyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+        motorcyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                road :   0.10%   54.94%    0.19%   16.34%    0.19%    0.19%
+             parking :   0.00%    0.00%    0.00%    0.17%    0.00%    0.00%
+            sidewalk :   2.35%   56.17%    4.19%   27.40%    4.17%    4.21%
+        other-ground :   0.00%    0.00%    0.00%    0.16%    0.00%    0.00%
+            building :   0.00%    0.00%    0.00%   18.91%    0.00%    0.00%
+               fence :   1.54%   58.39%    2.63%   12.22%    2.47%    2.81%
+          vegetation :   0.00%    0.00%    0.00%    1.56%    0.00%    0.00%
+               trunk :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             terrain :   0.00%    0.00%    0.00%    0.07%    0.00%    0.00%
+                pole :   8.98%   62.31%   14.41%   22.24%   14.57%   14.26%
+        traffic-sign :   1.08%   60.21%    1.80%    6.60%    1.35%    2.67%
+PQ 0.7  PQ_dagger  15.4  SQ 15.4  RQ 1.2  |  PQ_th 0.0  SQ_th 0.0  RQ_th 0.0  |  PQ_st 1.3  SQ_st 26.5  RQ_st 2.1  |  mIoU 5.6
+Current val PQ is 0.7 while the best val PQ is 2.3
+Current val miou is 5.6
+Validation per class iou: 
+car : 0.00%
+bicycle : 0.00%
+motorcycle : 0.00%
+truck : 0.00%
+bus : 0.51%
+person : 0.00%
+bicyclist : 0.00%
+motorcyclist : 0.00%
+road : 18.05%
+parking : 0.16%
+sidewalk : 26.76%
+other-ground : 0.17%
+building : 23.06%
+fence : 12.76%
+vegetation : 2.35%
+trunk : 0.00%
+terrain : 0.07%
+pole : 24.61%
+traffic-sign : 6.60%
+Current val miou is 6.1
+{'dataset': {'name': 'SemanticKitti', 'version': None, 'path': '/home/data/SemanticKitti', 'rotate_aug': True, 'flip_aug': True, 'max_volume_space': [50, 3.1415926, 3], 'min_volume_space': [0, -3.1415926, -5], 'gt_generator': {'sigma': 5}, 'grid_size': [480, 360, 32], 'inst_aug': {'if_use': True, 'aug_type': 'contmix', 'inst_pkl_path': '/home/data/SemanticKitti/instance_path.pkl', 'inst_trans': True, 'inst_rotate': True, 'inst_flip': True, 'inst_add': True}, 'num_worker': 12, 'min_points': 15}, 'model': {'pix_fusion': True, 'pix_fusion_path': 'checkpoints/resnet18-5c106cde.pth', 'use_sara': True, 'use_att': False, 'use_cont': False, 'model_load_path': 'kitti_ckpts', 'model_save_path': 'kitti_ckpts', 'train_batch_size': 4, 'val_batch_size': 4, 'learning_rate': 0.004, 'LR_MILESTONES': [40, 60, 90], 'LR_GAMMA': 0.5, 'check_iter': 4000, 'max_epoch': 0, 'post_proc': {'threshold': 0.1, 'nms_kernel': 5, 'top_k': 100}, 'center_loss': 'MSE', 'offset_loss': 'L1', 'center_loss_weight': 100, 'offset_loss_weight': 10}}
+epoch: 0   lr: 0.00400
+
+{'dataset': {'name': 'SemanticKitti', 'version': None, 'path': '/home/data/SemanticKitti', 'rotate_aug': True, 'flip_aug': True, 'max_volume_space': [50, 3.1415926, 3], 'min_volume_space': [0, -3.1415926, -5], 'gt_generator': {'sigma': 5}, 'grid_size': [480, 360, 32], 'inst_aug': {'if_use': True, 'aug_type': 'contmix', 'inst_pkl_path': '/home/data/SemanticKitti/instance_path.pkl', 'inst_trans': True, 'inst_rotate': True, 'inst_flip': True, 'inst_add': True}, 'num_worker': 12, 'min_points': 15}, 'model': {'pix_fusion': True, 'pix_fusion_path': 'checkpoints/resnet18-5c106cde.pth', 'use_sara': True, 'use_att': False, 'use_cont': False, 'model_load_path': 'kitti_ckpts', 'model_save_path': 'kitti_ckpts', 'train_batch_size': 4, 'val_batch_size': 4, 'learning_rate': 0.004, 'LR_MILESTONES': [40, 60, 90], 'LR_GAMMA': 0.5, 'check_iter': 4000, 'max_epoch': 0, 'post_proc': {'threshold': 0.1, 'nms_kernel': 5, 'top_k': 100}, 'center_loss': 'MSE', 'offset_loss': 'L1', 'center_loss_weight': 100, 'offset_loss_weight': 10}}
+epoch: 0   lr: 0.00400
+
+Validation per class PQ, SQ, RQ, IoU, P, R (Cam): 
+                 car :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             bicycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+          motorcycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+               truck :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                 bus :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+              person :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+           bicyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+        motorcyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                road :  13.10%   68.75%   19.05%   24.76%   19.96%   18.22%
+             parking :   0.00%    0.00%    0.00%    0.05%    0.00%    0.00%
+            sidewalk :   4.26%   62.50%    6.81%   21.17%    6.64%    6.99%
+        other-ground :   0.00%    0.00%    0.00%    0.22%    0.00%    0.00%
+            building :   3.39%   58.94%    5.74%   23.36%    5.32%    6.24%
+               fence :   2.06%   65.19%    3.16%   14.44%    2.48%    4.38%
+          vegetation :   0.00%    0.00%    0.00%    1.29%    0.00%    0.00%
+               trunk :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             terrain :   0.00%    0.00%    0.00%    0.06%    0.00%    0.00%
+                pole :  14.15%   72.16%   19.61%   18.84%   27.72%   15.18%
+        traffic-sign :   6.56%   74.81%    8.77%    4.04%    5.73%   18.60%
+PQ 2.3  PQ_dagger  21.2  SQ 21.2  RQ 3.3  |  PQ_th 0.0  SQ_th 0.0  RQ_th 0.0  |  PQ_st 4.0  SQ_st 36.6  RQ_st 5.7  |  mIoU 5.7
+Current val PQ is 2.3 while the best val PQ is 2.3
+Current val miou is 5.7
+Validation per class PQ, SQ, RQ, IoU, P, R (None): 
+                 car :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             bicycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+          motorcycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+               truck :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                 bus :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+              person :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+           bicyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+        motorcyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                road :   0.10%   54.94%    0.19%   16.34%    0.19%    0.19%
+             parking :   0.00%    0.00%    0.00%    0.17%    0.00%    0.00%
+            sidewalk :   2.35%   56.17%    4.19%   27.40%    4.17%    4.21%
+        other-ground :   0.00%    0.00%    0.00%    0.16%    0.00%    0.00%
+            building :   0.00%    0.00%    0.00%   18.91%    0.00%    0.00%
+               fence :   1.54%   58.39%    2.63%   12.22%    2.47%    2.81%
+          vegetation :   0.00%    0.00%    0.00%    1.56%    0.00%    0.00%
+               trunk :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             terrain :   0.00%    0.00%    0.00%    0.07%    0.00%    0.00%
+                pole :   8.98%   62.31%   14.41%   22.24%   14.57%   14.26%
+        traffic-sign :   1.08%   60.21%    1.80%    6.60%    1.35%    2.67%
+PQ 0.7  PQ_dagger  15.4  SQ 15.4  RQ 1.2  |  PQ_th 0.0  SQ_th 0.0  RQ_th 0.0  |  PQ_st 1.3  SQ_st 26.5  RQ_st 2.1  |  mIoU 5.6
+Current val PQ is 0.7 while the best val PQ is 2.3
+Current val miou is 5.6
+Validation per class iou: 
+car : 0.00%
+bicycle : 0.00%
+motorcycle : 0.00%
+truck : 0.00%
+bus : 0.51%
+person : 0.00%
+bicyclist : 0.00%
+motorcyclist : 0.00%
+road : 18.05%
+parking : 0.16%
+sidewalk : 26.76%
+other-ground : 0.17%
+building : 23.06%
+fence : 12.76%
+vegetation : 2.35%
+trunk : 0.00%
+terrain : 0.07%
+pole : 24.61%
+traffic-sign : 6.60%
+Current val miou is 6.1
+{'dataset': {'name': 'SemanticKitti', 'version': None, 'path': '/home/data/SemanticKitti', 'rotate_aug': True, 'flip_aug': True, 'max_volume_space': [50, 3.1415926, 3], 'min_volume_space': [0, -3.1415926, -5], 'gt_generator': {'sigma': 5}, 'grid_size': [480, 360, 32], 'inst_aug': {'if_use': True, 'aug_type': 'contmix', 'inst_pkl_path': '/home/data/SemanticKitti/instance_path.pkl', 'inst_trans': True, 'inst_rotate': True, 'inst_flip': True, 'inst_add': True}, 'num_worker': 12, 'min_points': 15}, 'model': {'pix_fusion': True, 'pix_fusion_path': 'checkpoints/resnet18-5c106cde.pth', 'use_sara': True, 'use_att': False, 'use_cont': False, 'model_load_path': 'kitti_ckpts', 'model_save_path': 'kitti_ckpts', 'train_batch_size': 4, 'val_batch_size': 4, 'learning_rate': 0.004, 'LR_MILESTONES': [40, 60, 90], 'LR_GAMMA': 0.5, 'check_iter': 4000, 'max_epoch': 1, 'post_proc': {'threshold': 0.1, 'nms_kernel': 5, 'top_k': 100}, 'center_loss': 'MSE', 'offset_loss': 'L1', 'center_loss_weight': 100, 'offset_loss_weight': 10}}
+epoch: 0   lr: 0.00400
+
+Validation per class PQ, SQ, RQ, IoU, P, R (Cam): 
+                 car :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             bicycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+          motorcycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+               truck :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                 bus :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+              person :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+           bicyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+        motorcyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                road :  13.10%   68.75%   19.05%   24.76%   19.96%   18.22%
+             parking :   0.00%    0.00%    0.00%    0.05%    0.00%    0.00%
+            sidewalk :   4.26%   62.50%    6.81%   21.17%    6.64%    6.99%
+        other-ground :   0.00%    0.00%    0.00%    0.22%    0.00%    0.00%
+            building :   3.39%   58.94%    5.74%   23.36%    5.32%    6.24%
+               fence :   2.06%   65.19%    3.16%   14.44%    2.48%    4.38%
+          vegetation :   0.00%    0.00%    0.00%    1.29%    0.00%    0.00%
+               trunk :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             terrain :   0.00%    0.00%    0.00%    0.06%    0.00%    0.00%
+                pole :  14.15%   72.16%   19.61%   18.84%   27.72%   15.18%
+        traffic-sign :   6.56%   74.81%    8.77%    4.04%    5.73%   18.60%
+PQ 2.3  PQ_dagger  21.2  SQ 21.2  RQ 3.3  |  PQ_th 0.0  SQ_th 0.0  RQ_th 0.0  |  PQ_st 4.0  SQ_st 36.6  RQ_st 5.7  |  mIoU 5.7
+Current val PQ is 2.3 while the best val PQ is 2.3
+Current val miou is 5.7
+Validation per class PQ, SQ, RQ, IoU, P, R (None): 
+                 car :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             bicycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+          motorcycle :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+               truck :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                 bus :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+              person :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+           bicyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+        motorcyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                road :   0.10%   54.94%    0.19%   16.34%    0.19%    0.19%
+             parking :   0.00%    0.00%    0.00%    0.17%    0.00%    0.00%
+            sidewalk :   2.35%   56.17%    4.19%   27.40%    4.17%    4.21%
+        other-ground :   0.00%    0.00%    0.00%    0.16%    0.00%    0.00%
+            building :   0.00%    0.00%    0.00%   18.91%    0.00%    0.00%
+               fence :   1.54%   58.39%    2.63%   12.22%    2.47%    2.81%
+          vegetation :   0.00%    0.00%    0.00%    1.56%    0.00%    0.00%
+               trunk :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+             terrain :   0.00%    0.00%    0.00%    0.07%    0.00%    0.00%
+                pole :   8.98%   62.31%   14.41%   22.24%   14.57%   14.26%
+        traffic-sign :   1.08%   60.21%    1.80%    6.60%    1.35%    2.67%
+PQ 0.7  PQ_dagger  15.4  SQ 15.4  RQ 1.2  |  PQ_th 0.0  SQ_th 0.0  RQ_th 0.0  |  PQ_st 1.3  SQ_st 26.5  RQ_st 2.1  |  mIoU 5.6
+Current val PQ is 0.7 while the best val PQ is 2.3
+Current val miou is 5.6
+Validation per class iou: 
+car : 0.00%
+bicycle : 0.00%
+motorcycle : 0.00%
+truck : 0.00%
+bus : 0.51%
+person : 0.00%
+bicyclist : 0.00%
+motorcyclist : 0.00%
+road : 18.05%
+parking : 0.16%
+sidewalk : 26.76%
+other-ground : 0.17%
+building : 23.06%
+fence : 12.76%
+vegetation : 2.35%
+trunk : 0.00%
+terrain : 0.07%
+pole : 24.61%
+traffic-sign : 6.60%
+Current val miou is 6.1
+epoch: 1   lr: 0.00400
+
+Validation per class PQ, SQ, RQ, IoU, P, R (Cam): 
+                 car :  89.73%   93.34%   96.13%   88.81%   95.23%   97.05%
+             bicycle :  37.88%   73.87%   51.28%   39.00%   64.52%   42.55%
+          motorcycle :  33.05%   85.94%   38.46%   26.76%   83.33%   25.00%
+               truck :  17.83%   82.77%   21.54%   13.34%   15.56%   35.00%
+                 bus :  15.00%   81.74%   18.35%    3.96%   37.04%   12.20%
+              person :  52.08%   88.85%   58.62%   61.05%   83.61%   45.13%
+           bicyclist :  73.65%   93.74%   78.57%   82.24%   69.62%   90.16%
+        motorcyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                road :  88.58%   92.26%   96.02%   90.38%   96.02%   96.02%
+             parking :   4.18%   66.58%    6.28%   20.80%    5.47%    7.37%
+            sidewalk :  57.66%   77.51%   74.39%   65.16%   72.62%   76.25%
+        other-ground :   0.00%    0.00%    0.00%    0.17%    0.00%    0.00%
+            building :  73.73%   86.43%   85.31%   81.86%   84.20%   86.44%
+               fence :  22.37%   69.20%   32.32%   51.39%   28.28%   37.71%
+          vegetation :  78.26%   83.66%   93.55%   84.24%   93.55%   93.55%
+               trunk :  44.52%   76.27%   58.38%   61.27%   64.03%   53.64%
+             terrain :  30.45%   71.63%   42.52%   62.97%   44.42%   40.77%
+                pole :  59.93%   78.49%   76.35%   63.81%   80.73%   72.43%
+        traffic-sign :  66.36%   81.24%   81.69%   46.49%   85.29%   78.38%
+PQ 44.5  PQ_dagger  58.0  SQ 72.8  RQ 53.1  |  PQ_th 39.9  SQ_th 75.0  RQ_th 45.4  |  PQ_st 47.8  SQ_st 71.2  RQ_st 58.8  |  mIoU 49.7
+Current val PQ is 44.5 while the best val PQ is 44.5
+Current val miou is 49.7
+Validation per class PQ, SQ, RQ, IoU, P, R (None): 
+                 car :  86.77%   92.63%   93.67%   89.18%   92.40%   94.98%
+             bicycle :  30.41%   76.03%   40.00%   35.98%   55.86%   31.16%
+          motorcycle :  38.09%   88.87%   42.86%   42.26%   62.79%   32.53%
+               truck :  19.15%   86.16%   22.22%   46.23%   12.68%   90.00%
+                 bus :  16.71%   89.23%   18.73%   15.59%   40.58%   12.17%
+              person :  47.34%   89.87%   52.67%   45.29%   74.72%   40.67%
+           bicyclist :  59.80%   92.27%   64.80%   55.59%   55.24%   78.38%
+        motorcyclist :   0.00%    0.00%    0.00%    0.00%    0.00%    0.00%
+                road :  80.30%   86.19%   93.17%   84.17%   93.17%   93.17%
+             parking :   5.40%   61.29%    8.81%   30.64%    6.23%   15.03%
+            sidewalk :  62.14%   75.51%   82.29%   69.86%   81.97%   82.60%
+        other-ground :   0.00%    0.00%    0.00%    0.30%    0.00%    0.00%
+            building :  81.83%   87.17%   93.87%   85.39%   93.33%   94.41%
+               fence :  21.81%   66.58%   32.76%   54.16%   30.90%   34.85%
+          vegetation :  83.40%   84.04%   99.24%   84.71%   99.24%   99.24%
+               trunk :  38.93%   71.59%   54.39%   61.71%   54.27%   54.51%
+             terrain :  41.15%   70.77%   58.14%   66.35%   57.47%   58.82%
+                pole :  53.25%   73.82%   72.13%   61.59%   72.85%   71.43%
+        traffic-sign :  48.08%   78.20%   61.48%   43.47%   65.29%   58.09%
+PQ 42.9  PQ_dagger  55.4  SQ 72.1  RQ 52.2  |  PQ_th 37.3  SQ_th 76.9  RQ_th 41.9  |  PQ_st 46.9  SQ_st 68.7  RQ_st 59.7  |  mIoU 51.2
+Current val PQ is 42.9 while the best val PQ is 44.5
+Current val miou is 51.2
+epoch 1 iter   447, avg_loss: 1.3, semantic loss: 0.8, center loss: 0.3, offset loss: 0.1, instmap loss: 0.1, pix loss: nan
+
+Validation per class iou: 
+car : 92.82%
+bicycle : 37.90%
+motorcycle : 40.15%
+truck : 30.35%
+bus : 17.75%
+person : 50.38%
+bicyclist : 62.08%
+motorcyclist : 1.43%
+road : 85.43%
+parking : 29.85%
+sidewalk : 69.46%
+other-ground : 0.28%
+building : 85.49%
+fence : 55.99%
+vegetation : 84.91%
+trunk : 62.84%
+terrain : 66.21%
+pole : 63.71%
+traffic-sign : 55.52%
+Current val miou is 52.2
